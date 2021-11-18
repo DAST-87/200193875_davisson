@@ -47,6 +47,14 @@
                 justify-content: center;
                 font-family: Montserrat;
             }
+            .container_prod{
+                display: flex;
+                flex-wrap: wrap;
+                border: solid 2px #DCDCDC; 
+                max-width: 800px;
+                margin: auto;
+                padding-top: 50px;
+            }
         </style>
 
     </head>    
@@ -63,7 +71,14 @@
             </ul>    
         </nav>    
         <div class="content">
-            conteúdo
+            <div class="container_prod">
+
+            <?php
+                include('pages/home.php');
+            ?>
+
+            </div>
+
         </div>
         <footer>
             RA: 20019387-5 Davisson Stefesson
