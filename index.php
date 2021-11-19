@@ -36,6 +36,10 @@
                 font-family: Montserrat;
                 font-size: 20px;
             }
+            nav ul li a{
+                text-decoration: none;
+                color: white;
+            }
             .content{
                 min-height: 600px;
             }
@@ -50,7 +54,6 @@
             .container_prod{
                 display: flex;
                 flex-wrap: wrap;
-                border: solid 2px #DCDCDC; 
                 max-width: 800px;
                 margin: auto;
                 padding-top: 50px;
@@ -64,9 +67,9 @@
         </header>
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Quem Somos</li>
-                <li>Contato</li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php?page-quem_somos">Quem Somos</a></li>
+                <li><a href="index.php?page-contato">Contato</a></li>
                 <li>Localização</li>
             </ul>    
         </nav>    
@@ -74,6 +77,14 @@
             <div class="container_prod">
 
             <?php
+
+            $page = "home.php";
+                if(isset($_GET['page'])){
+                    if(file_exists("pages/".$_GET['page'].".php")){
+                        $page = $_GET['page'];
+                    }
+                }
+
                 include('pages/home.php');
             ?>
 
